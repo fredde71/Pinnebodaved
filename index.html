@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pinneboda Ved – Vedleverans med kvalitet</title>
+  <meta name="description" content="Pinneboda Ved levererar högkvalitativ björkved och blandved. Snabb leverans, schyssta priser, nöjd-kund-garanti."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css"/>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="nav">
+    <div class="container row between center">
+      <a class="brand" href="#top">
+        <img class="logo" src="assets/logo.svg" alt="Pinneboda Ved logotyp"/>
+        <span>Pinneboda Ved</span>
+      </a>
+      <nav class="menu">
+        <a href="#produkter">Produkter</a>
+        <a href="#leverans">Leverans</a>
+        <a href="#om">Om oss</a>
+        <a class="btn btn--ghost" href="#kontakt">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero container">
+      <div class="hero__text">
+        <h1>Värme från skogen – levererad till dig</h1>
+        <p>Vi levererar <strong>kvalitetsved</strong> i säck eller löst <span class="nowrap">– snabbt, tryggt och smidigt.</span></p>
+        <div class="cta">
+          <a class="btn" href="tel:+46700000000">Ring & beställ</a>
+          <a class="btn btn--ghost" href="mailto:order@pinnebodaved.se?subject=Best%C3%A4llning%20ved">Maila oss</a>
+        </div>
+        <ul class="badges">
+          <li>✔️ Torr björkved</li>
+          <li>✔️ Schyssta priser</li>
+          <li>✔️ Snabb leverans</li>
+        </ul>
+      </div>
+      <div class="hero__img">
+        <img src="assets/hero-wood.svg" alt="Illustration av ved och skog">
+      </div>
+    </section>
+
+    <section id="produkter" class="container section">
+      <h2>Produkter & priser</h2>
+      <p class="muted">All text är enkel att ändra i <code>index.html</code>. Måtten och priserna nedan är exempel.</p>
+      <div class="cards">
+        <article class="card">
+          <img class="card__img" src="assets/bag.svg" alt="Storsäck med ved">
+          <div class="card__body">
+            <h3>Björkved – storsäck</h3>
+            <p>1 m³ storsäck, 30 cm klabbar. Torrhetsgrad &lt;20%.</p>
+            <div class="price">1 295 kr / säck</div>
+            <button class="btn btn--block" onclick="openOrder('Björkved – storsäck')">Beställ</button>
+          </div>
+        </article>
+        <article class="card">
+          <img class="card__img" src="assets/pile.svg" alt="Löst staplad ved">
+          <div class="card__body">
+            <h3>Björkved – löst</h3>
+            <p>Löst tippad ved i 30 cm klabbar. Minst 2 m³ per leverans.</p>
+            <div class="price">945 kr / m³</div>
+            <button class="btn btn--block" onclick="openOrder('Björkved – löst')">Beställ</button>
+          </div>
+        </article>
+        <article class="card">
+          <img class="card__img" src="assets/mix.svg" alt="Blandved">
+          <div class="card__body">
+            <h3>Blandved</h3>
+            <p>Kostnadseffektivt alternativ för pannrum och bastu.</p>
+            <div class="price">795 kr / m³</div>
+            <button class="btn btn--block" onclick="openOrder('Blandved')">Beställ</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="leverans" class="container section">
+      <h2>Leverans & områden</h2>
+      <div class="grid-2">
+        <div>
+          <ul class="list">
+            <li>✅ Hemleverans till uppfart</li>
+            <li>✅ Inbärning som tillval</li>
+            <li>✅ Tidsfönster efter överenskommelse</li>
+          </ul>
+          <p class="muted small">Exempelområden: <em>Växjö, Alvesta, Tingsryd</em>. Uppdatera listan efter ert verkliga område.</p>
+        </div>
+        <div class="note">
+          <strong>Frakt</strong>
+          <p>Fast avgift inom närområde. Utanför zon: enligt offert.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="om" class="container section">
+      <h2>Om Pinneboda Ved</h2>
+      <p>Vi är ett lokalt, noggrant gäng med rötter i skogen. Vi väljer råvara med omsorg, torkar skonsamt och levererar när det passar dig. Nöjd-kund-garanti – är du inte nöjd så hör du av dig så löser vi det.</p>
+      <div class="stats">
+        <div class="stat"><span class="stat__num" data-target="1200">0</span><span class="stat__label">m³ levererat</span></div>
+        <div class="stat"><span class="stat__num" data-target="350">0</span><span class="stat__label">nöjda kunder</span></div>
+        <div class="stat"><span class="stat__num" data-target="4.9">0</span><span class="stat__label">i betyg</span></div>
+      </div>
+    </section>
+
+    <section id="kontakt" class="container section contact">
+      <h2>Kontakt</h2>
+      <form class="form" onsubmit="return sendContact(event)">
+        <div class="row">
+          <div class="field">
+            <label for="name">Namn</label>
+            <input id="name" name="name" required placeholder="Ditt namn"/>
+          </div>
+          <div class="field">
+            <label for="email">E-post</label>
+            <input id="email" name="email" type="email" required placeholder="namn@exempel.se"/>
+          </div>
+        </div>
+        <div class="field">
+          <label for="message">Meddelande</label>
+          <textarea id="message" name="message" rows="4" required placeholder="Vad vill du beställa eller fråga?"></textarea>
+        </div>
+        <button class="btn" type="submit">Skicka</button>
+        <p class="muted small">Formuläret använder din e-postklient. Vill du ha ett backend-form senare kan vi lägga till Netlify Forms eller en enkel server.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row between">
+        <p class="muted small">© <span id="year"></span> Pinneboda Ved. Alla rättigheter förbehållna.</p>
+        <div class="social">
+          <a href="#" aria-label="Instagram"><img src="assets/ig.svg" alt="Instagram"/></a>
+          <a href="#" aria-label="Facebook"><img src="assets/fb.svg" alt="Facebook"/></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

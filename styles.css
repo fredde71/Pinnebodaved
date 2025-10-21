@@ -1,0 +1,74 @@
+/* Pinneboda Ved – minimal styling with a modern feel */
+:root{
+  --bg:#0f1115;
+  --panel:#12161d;
+  --muted:#96a0b5;
+  --text:#e8ecf1;
+  --accent:#7cc97e; /* skogsgrön */
+  --accent-2:#c2a677; /* varm beige */
+  --ring: rgba(124,201,126,.3);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.nowrap{white-space:nowrap}
+
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+.row{display:flex;gap:12px}
+.row.between{justify-content:space-between}
+.row.center{align-items:center}
+
+.nav{position:sticky;top:0;background:rgba(15,17,21,.7);backdrop-filter: blur(8px);border-bottom:1px solid #1b2130;z-index:50}
+.nav .brand{display:flex;align-items:center;gap:10px;font-weight:700}
+.logo{width:32px;height:32px}
+.menu a{margin:0 10px;color:var(--muted)}
+.menu .btn--ghost{margin-left:6px}
+
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;min-height:72vh}
+.hero h1{font-size:clamp(30px,5.2vw,56px);line-height:1.05;margin:0 0 10px}
+.hero p{font-size:18px;color:var(--muted);margin:0 0 18px}
+.badges{display:flex;gap:14px;flex-wrap:wrap;padding:0;margin:10px 0 0;list-style:none}
+.hero__img{filter:drop-shadow(0 20px 60px rgba(0,0,0,.5))}
+
+.btn{background:var(--accent);color:#07140b;border:none;padding:12px 18px;border-radius:12px;font-weight:700;box-shadow:0 6px 16px rgba(124,201,126,.2);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .06s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn--ghost{background:transparent;border:1px solid #273043;color:var(--text)}
+.btn--block{width:100%}
+
+.section{padding:70px 0}
+.section h2{font-size:28px;margin:0 0 8px}
+.muted{color:var(--muted)}
+.small{font-size:12px}
+
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:20px}
+.card{background:var(--panel);border:1px solid #1b2130;border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.card__img{height:160px;object-fit:cover;background:#0c0f14;padding:16px}
+.card__body{padding:16px;display:flex;flex-direction:column;gap:10px}
+.price{font-weight:800;font-size:20px;color:var(--accent)}
+
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.list{padding-left:18px}
+.note{background:linear-gradient(180deg,rgba(124,201,126,.08),transparent);border:1px solid #203024;border-radius:14px;padding:16px}
+
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px}
+.stat{background:var(--panel);border:1px solid #1b2130;border-radius:14px;padding:20px;text-align:center}
+.stat__num{font-weight:800;font-size:32px;display:block}
+.stat__label{color:var(--muted);font-size:12px}
+
+.contact .form{background:var(--panel);border:1px solid #1b2130;border-radius:16px;padding:16px}
+.field{display:flex;flex-direction:column;gap:6px;flex:1}
+.field input,.field textarea{background:#0a0e13;border:1px solid #202737;color:var(--text);padding:12px;border-radius:10px;outline:none}
+.field input:focus,.field textarea:focus{border-color:var(--accent);box-shadow:0 0 0 6px var(--ring)}
+.form .row{display:flex;gap:12px;flex-wrap:wrap}
+
+.footer{border-top:1px solid #1b2130;padding:26px 0;margin-top:40px}
+.footer .social a{opacity:.8}
+.footer .social a:hover{opacity:1}
+
+@media (max-width: 900px){
+  .hero{grid-template-columns:1fr;gap:26px}
+  .cards{grid-template-columns:1fr}
+  .grid-2{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr}
+}

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Pinneboda Ved – Vedleverans med kvalitet</title>
-  <meta name="description" content="Pinneboda Ved levererar högkvalitativ björkved och blandved. Snabb leverans, schyssta priser, nöjd-kund-garanti."/>
+  <meta name="description" content="Pinneboda Ved på Österlen levererar högkvalitativ björkved och blandved. Snabb leverans, schyssta priser, nöjd-kund-garanti."/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Bricolage+Grotesque:wght@700;800&display=swap" rel="stylesheet">
@@ -18,6 +18,7 @@
         <span class="brand__title"><span class="brand__pinneboda">Pinneboda</span> <span class="brand__ved">Ved</span></span>
       </a>
       <nav class="menu">
+        <a href="#bestall">Beställ ved</a>
         <a href="#produkter">Produkter</a>
         <a href="#leverans">Leverans</a>
         <a href="#om">Om oss</a>
@@ -30,16 +31,16 @@
     <section class="hero container">
       <div class="hero__content">
         <h1>Värme från skogen – levererad till dig</h1>
-        <p>Vi levererar <strong>kvalitetsved</strong> i säck eller löst – snabbt, tryggt och smidigt.</p>
-        <div class="cta">
-          <a class="btn" href="tel:+46731820002">Ring 0731-820002</a>
-          <a class="btn btn--ghost" href="mailto:viktorkristiansson@icloud.com?subject=Best%C3%A4llning%20ved">Maila oss</a>
+        <p>Vi är din <strong>lokala vedleverantör från Österlen</strong>. Med rötterna i skogen och fokus på kvalitet levererar vi torr björkved och prisvärd blandved – smidigt hem till din uppfart.</p>
+        <div class="hero-highlights">
+          <div class="hi"><strong>Tryggt:</strong> Nöjd‑kund‑garanti.</div>
+          <div class="hi"><strong>Smidigt:</strong> Tidsfönster efter överenskommelse.</div>
+          <div class="hi"><strong>Schysst:</strong> Klara priser utan dolda avgifter.</div>
         </div>
-        <ul class="badges">
-          <li>✔️ Torr björkved</li>
-          <li>✔️ Schyssta priser</li>
-          <li>✔️ Snabb leverans</li>
-        </ul>
+        <div class="cta">
+          <a class="btn" href="#bestall">Beställ ved</a>
+          <a class="btn btn--ghost" href="mailto:viktorkristiansson@icloud.com?subject=Fr%C3%A5ga%20till%20Pinneboda%20Ved">Maila oss</a>
+        </div>
         <p class="contact-inline">Kontakt: <strong>Viktor Kristiansson</strong> · <a href="tel:+46731820002">0731-820002</a> · <a href="mailto:viktorkristiansson@icloud.com">viktorkristiansson@icloud.com</a></p>
       </div>
       <div class="hero__image">
@@ -47,9 +48,63 @@
       </div>
     </section>
 
+    <section id="bestall" class="container section order">
+      <h2>Beställ ved</h2>
+      <p class="muted">Fyll i formuläret så skickas din beställning direkt till oss. Du får bekräftelse via e‑post.</p>
+      <form class="form" onsubmit="return sendOrder(event)">
+        <div class="row">
+          <div class="field">
+            <label for="o_name">Namn</label>
+            <input id="o_name" name="name" required placeholder="Ditt namn"/>
+          </div>
+          <div class="field">
+            <label for="o_email">E‑post</label>
+            <input id="o_email" name="email" type="email" required placeholder="namn@exempel.se"/>
+          </div>
+          <div class="field">
+            <label for="o_phone">Telefon</label>
+            <input id="o_phone" name="phone" type="tel" placeholder="07xx‑xx xx xx"/>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="o_product">Produkt</label>
+            <select id="o_product" name="product" required>
+              <option value="" disabled selected>Välj produkt…</option>
+              <option>Björkved – storsäck (1 m³)</option>
+              <option>Björkved – löst (per m³)</option>
+              <option>Blandved (per m³)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="o_qty">Antal / m³</label>
+            <input id="o_qty" name="quantity" type="number" min="1" step="1" required placeholder="t.ex. 2"/>
+          </div>
+          <div class="field">
+            <label for="o_date">Önskat datum</label>
+            <input id="o_date" name="date" type="date"/>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="o_address">Leveransadress</label>
+          <input id="o_address" name="address" required placeholder="Gata, postnummer och ort"/>
+        </div>
+
+        <div class="field">
+          <label for="o_message">Meddelande (valfritt)</label>
+          <textarea id="o_message" name="message" rows="4" placeholder="T.ex. portkod, uppfart, önskad tid m.m."></textarea>
+        </div>
+
+        <button class="btn" type="submit">Skicka beställning</button>
+        <p class="muted small">Formuläret öppnar din e‑post och förifyller alla uppgifter. Vill du ha helautomatiska utskick senare kan vi koppla på Netlify Forms.</p>
+      </form>
+    </section>
+
     <section id="produkter" class="container section">
       <h2>Produkter & priser</h2>
-      <p class="muted">Exempel – ändra enkelt i <code>index.html</code>. Vi kan byta bilder vartefter.</p>
+      <p class="muted">Exempel – justera vid behov.</p>
       <div class="cards">
         <article class="card">
           <img class="card__img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Stack_of_chopped_wood_%28Unsplash%29.jpg/1280px-Stack_of_chopped_wood_%28Unsplash%29.jpg" alt="Storsäck / ved i trav" loading="lazy" referrerpolicy="no-referrer">
@@ -90,7 +145,7 @@
             <li>✅ Inbärning som tillval</li>
             <li>✅ Tidsfönster efter överenskommelse</li>
           </ul>
-          <p class="muted small">Exempelområden: <em>Växjö, Alvesta, Tingsryd</em>. Uppdatera listan efter ert verkliga område.</p>
+          <p class="muted small">Exempelområden: <em>Österlen, Simrishamn, Tomelilla, Ystad</em>. Uppdatera efter ert faktiska område.</p>
         </div>
         <div class="note">
           <strong>Frakt</strong>
@@ -104,7 +159,7 @@
 
     <section id="om" class="container section">
       <h2>Om Pinneboda Ved</h2>
-      <p>Vi är ett lokalt, noggrant gäng med rötter i skogen. Vi väljer råvara med omsorg, torkar skonsamt och levererar när det passar dig. Nöjd-kund-garanti – är du inte nöjd så hör du av dig så löser vi det.</p>
+      <p>Vi är ett lokalt, noggrant gäng med rötter i skogen. Vi väljer råvara med omsorg, torkar skonsamt och levererar när det passar dig. Nöjd‑kund‑garanti – är du inte nöjd så hör du av dig så löser vi det.</p>
       <div class="stats">
         <div class="stat"><span class="stat__num" data-target="1200">0</span><span class="stat__label">m³ levererat</span></div>
         <div class="stat"><span class="stat__num" data-target="350">0</span><span class="stat__label">nöjda kunder</span></div>
@@ -126,7 +181,7 @@
             <input id="name" name="name" required placeholder="Ditt namn"/>
           </div>
           <div class="field">
-            <label for="email">E-post</label>
+            <label for="email">E‑post</label>
             <input id="email" name="email" type="email" required placeholder="namn@exempel.se"/>
           </div>
         </div>
@@ -135,7 +190,7 @@
           <textarea id="message" name="message" rows="4" required placeholder="Vad vill du beställa eller fråga?"></textarea>
         </div>
         <button class="btn" type="submit">Skicka</button>
-        <p class="muted small">Formuläret använder din e-postklient. Vill du ha ett backend-form senare kan vi lägga till Netlify Forms eller en enkel server.</p>
+        <p class="muted small">Formuläret använder din e‑postklient. Vill du ha ett backend‑form senare kan vi lägga till Netlify Forms eller en enkel server.</p>
       </form>
     </section>
   </main>

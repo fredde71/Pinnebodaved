@@ -30,6 +30,33 @@ function sendContact(e){
   window.location.href = 'mailto:viktorkristiansson@icloud.com?subject=' + subject + '&body=' + body;
   return false;
 }
+function sendOrder(e){
+  e.preventDefault();
+  const name = document.getElementById('o_name').value;
+  const email = document.getElementById('o_email').value;
+  const phone = document.getElementById('o_phone').value;
+  const product = document.getElementById('o_product').value;
+  const qty = document.getElementById('o_qty').value;
+  const date = document.getElementById('o_date').value;
+  const address = document.getElementById('o_address').value;
+  const message = document.getElementById('o_message').value;
+  const subject = encodeURIComponent('Beställning: ' + product);
+  const bodyTxt = [
+    'Namn: ' + name,
+    'E‑post: ' + email,
+    'Telefon: ' + phone,
+    'Produkt: ' + product,
+    'Antal / m³: ' + qty,
+    'Önskat datum: ' + (date || '-'),
+    'Leveransadress: ' + address,
+    '',
+    'Meddelande:',
+    message || '-'
+  ].join('\n');
+  const body = encodeURIComponent(bodyTxt);
+  window.location.href = 'mailto:viktorkristiansson@icloud.com?subject=' + subject + '&body=' + body;
+  return false;
+}
 document.addEventListener('DOMContentLoaded', ()=>{
   document.getElementById('year').textContent = new Date().getFullYear();
   animateStats();

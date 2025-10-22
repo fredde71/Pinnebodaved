@@ -1,4 +1,4 @@
-// Interaktivitet + mailto uppdaterad till viktorkristiansson@icloud.com
+// Minimal interaktivitet
 function animateStats(){
   const nums = document.querySelectorAll('.stat__num');
   nums.forEach(el=>{

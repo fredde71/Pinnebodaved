@@ -1,4 +1,4 @@
-/* Pinneboda Ved – ljus tema v7 */
+/* Pinneboda Ved – ljus tema v8 (lokala bilder) */
 :root{
   --bg:#fafbfc;
   --panel:#ffffff;
@@ -37,7 +37,7 @@ img{max-width:100%;display:block}
 /* Buttons */
 .btn{background:var(--accent);color:#fff;border:none;padding:12px 18px;border-radius:12px;font-weight:700;box-shadow:0 6px 16px rgba(47,122,61,.15);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .06s ease}
 .btn:hover{transform:translateY(-1px)}
-.btn--ghost{background:#fff;border:1px solid var(--border);color:#text}
+.btn--ghost{background:#fff;border:1px solid var(--border);color:var(--text)}
 .btn--block{width:100%}
 
 /* Sections */

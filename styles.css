@@ -1,1 +1,86 @@
-/* Same styling as previous version */
+/* Pinneboda Ved – ljus tema v5 */
+:root{
+  --bg:#fafbfc;
+  --panel:#ffffff;
+  --muted:#5b6577;
+  --text:#1c2230;
+  --accent:#2f7a3d;
+  --accent-soft:#e7f3ea;
+  --border:#e5e8ef;
+  --ring: rgba(47,122,61,.18);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.nowrap{white-space:nowrap}
+
+.container{max-width:1120px;margin:0 auto;padding:0 20px}
+.row{display:flex;gap:12px}
+.row.between{justify-content:space-between}
+.row.center{align-items:center}
+
+/* Nav */
+.nav{position:sticky;top:0;background:rgba(255,255,255,.85);backdrop-filter: blur(8px);border-bottom:1px solid var(--border);z-index:50}
+.brand__title{font-weight:800;letter-spacing:.4px;font-size:18px;display:inline-block;padding:10px 0}
+.menu a{margin:0 10px;color:#3b4454}
+.menu .btn--ghost{margin-left:6px}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center;min-height:68vh;padding-top:28px}
+.hero h1{font-size:clamp(30px,5.2vw,54px);line-height:1.05;margin:0 0 10px}
+.hero p{font-size:18px;color:#3b4454;margin:0 0 18px}
+.badges{display:flex;gap:14px;flex-wrap:wrap;padding:0;margin:10px 0 0;list-style:none}
+.hero__image img{border-radius:16px;border:1px solid var(--border);box-shadow:0 10px 25px rgba(0,0,0,.06);}
+.contact-inline{margin-top:12px;color:#3b4454}
+
+/* Buttons */
+.btn{background:var(--accent);color:#fff;border:none;padding:12px 18px;border-radius:12px;font-weight:700;box-shadow:0 6px 16px rgba(47,122,61,.15);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .06s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn--ghost{background:#fff;border:1px solid var(--border);color:var(--text)}
+.btn--block{width:100%}
+
+/* Sections */
+.section{padding:70px 0}
+.section h2{font-size:28px;margin:0 0 8px}
+.muted{color:var(--muted)}
+.small{font-size:12px}
+
+/* Cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:20px}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.card__img{height:180px;object-fit:cover}
+.card__body{padding:16px;display:flex;flex-direction:column;gap:10px}
+.price{font-weight:800;font-size:20px;color:var(--accent)}
+
+/* Delivery */
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.list{padding-left:18px}
+.note{background:var(--accent-soft);border:1px solid #cfe4d4;border-radius:14px;padding:16px}
+.note__image img{margin-top:10px;border-radius:12px;border:1px solid var(--border)}
+
+/* Stats */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px}
+.stat{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:20px;text-align:center}
+.stat__num{font-weight:800;font-size:32px;display:block}
+.stat__label{color:var(--muted);font-size:12px}
+
+/* Contact */
+.contact .form{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:16px}
+.contact-card{background:#fff;border:1px dashed var(--border);border-radius:12px;padding:12px;margin-bottom:12px}
+.field{display:flex;flex-direction:column;gap:6px;flex:1}
+.field input,.field textarea{background:#fff;border:1px solid var(--border);color:var(--text);padding:12px;border-radius:10px;outline:none}
+.field input:focus,.field textarea:focus{border-color:var(--accent);box-shadow:0 0 0 6px var(--ring)}
+.form .row{display:flex;gap:12px;flex-wrap:wrap}
+
+/* Footer */
+.footer{border-top:1px solid var(--border);padding:26px 0;margin-top:40px}
+.footer .social a{opacity:.8}
+.footer .social a:hover{opacity:1}
+
+@media (max-width: 900px){
+  .hero{grid-template-columns:1fr;gap:26px}
+  .cards{grid-template-columns:1fr}
+  .grid-2{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr}
+}

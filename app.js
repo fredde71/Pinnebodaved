@@ -1,4 +1,36 @@
-function animateStats(){const n=document.querySelectorAll('.stat__num');n.forEach(e=>{const t=parseFloat(e.dataset.target||'0'),o=String(t).includes('.'),a=900,s=performance.now();function r(n){const c=Math.min(1,(n-s)/a),l=t*c;e.textContent=o?l.toFixed(1):Math.round(l),c<1&&requestAnimationFrame(r)}requestAnimationFrame(r)})}
-function openOrder(p){const s=encodeURIComponent('Beställning: '+p),b=encodeURIComponent('Hej!\n\nJag vill beställa: '+p+'\nAntal: \nAdress: \nÖnskad leverans: \n\nVänligen,\n');window.location.href='mailto:viktorkristiansson@icloud.com?subject='+s+'&body='+b;}
-function sendContact(e){e.preventDefault();const n=document.getElementById('name').value,t=document.getElementById('email').value,a=document.getElementById('message').value,s=encodeURIComponent('Kontakt från '+n),o=encodeURIComponent(a+'\n\nSvar till: '+t);window.location.href='mailto:viktorkristiansson@icloud.com?subject='+s+'&body='+o;return!1}
-document.addEventListener('DOMContentLoaded',()=>{document.getElementById('year').textContent=(new Date).getFullYear(),animateStats()});
+// Interaktivitet + mailto uppdaterad till viktorkristiansson@icloud.com
+function animateStats(){
+  const nums = document.querySelectorAll('.stat__num');
+  nums.forEach(el=>{
+    const target = parseFloat(el.dataset.target || '0');
+    const isFloat = String(target).includes('.');
+    const dur = 900;
+    const start = performance.now();
+    function tick(now){
+      const p = Math.min(1, (now - start)/dur);
+      const val = target * p;
+      el.textContent = isFloat ? val.toFixed(1) : Math.round(val);
+      if(p<1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  });
+}
+function openOrder(product){
+  const subject = encodeURIComponent('Beställning: ' + product);
+  const body = encodeURIComponent('Hej!\n\nJag vill beställa: ' + product + '\nAntal: \nAdress: \nÖnskad leverans: \n\nVänligen,\n');
+  window.location.href = 'mailto:viktorkristiansson@icloud.com?subject=' + subject + '&body=' + body;
+}
+function sendContact(e){
+  e.preventDefault();
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const message = document.getElementById('message').value;
+  const subject = encodeURIComponent('Kontakt från ' + name);
+  const body = encodeURIComponent(message + '\n\nSvar till: ' + email);
+  window.location.href = 'mailto:viktorkristiansson@icloud.com?subject=' + subject + '&body=' + body;
+  return false;
+}
+document.addEventListener('DOMContentLoaded', ()=>{
+  document.getElementById('year').textContent = new Date().getFullYear();
+  animateStats();
+});
